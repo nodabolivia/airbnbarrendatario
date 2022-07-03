@@ -1,0 +1,7 @@
+{
+  "name": "arrendatarioapp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
