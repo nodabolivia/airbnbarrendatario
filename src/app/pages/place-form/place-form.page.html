@@ -1,0 +1,90 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Nuevo lugar </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <section>
+    <ion-img
+      *ngIf="(placeId)"
+      [src]="src"
+      style="height:200px;width:100%"
+    ></ion-img>
+  </section>
+  <section>
+    <form [formGroup]="formPlace">
+      <ion-item>
+        <ion-label position="floating">Ingrese nombre </ion-label>
+        <ion-input required formControlName="nombre"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Ingrese descripcion </ion-label>
+        <ion-input required formControlName="descripcion"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Ingrese cantidad de personas </ion-label>
+        <ion-input required formControlName="cantPersonas"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Ingrese cantidad de camas </ion-label>
+        <ion-input required formControlName="cantCamas"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Ingrese cantidad de baños </ion-label>
+        <ion-input required formControlName="cantBanios"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating"
+          >Ingrese cantidad de habitaciones
+        </ion-label>
+        <ion-input required formControlName="cantHabitaciones"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Ingrese si tiene Wifi </ion-label>
+        <ion-input required formControlName="tieneWifi"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating"
+          >Ingrese cantidad de vehiculos de parqueo
+        </ion-label>
+        <ion-input required formControlName="cantVehiculosParqueo"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Ingrese precio por noche </ion-label>
+        <ion-input required formControlName="precioNoche"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Ingrese costo de limpieza </ion-label>
+        <ion-input required formControlName="costoLimpieza"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Ingrese ciudad </ion-label>
+        <ion-input required formControlName="ciudad"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Ingrese photo </ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+      <!--<ion-item>
+        <ion-label position="floating">Ingrese longitud </ion-label>
+        <ion-input required formControlName="longitud"></ion-input>
+      </ion-item> -->
+      <ion-item
+        style="cursor: pointer; margin-top: 20px"
+        (click)="onpickupClick()"
+      >
+        <ion-icon slot="start" name="locate"></ion-icon>
+        <ion-label position="stacked">Localización del lugar</ion-label>
+        <ion-textarea style="margin-top: 20px">{{coords}}</ion-textarea>
+      </ion-item>
+
+      <ion-button *ngIf="(!placeId)" (click)="createPlace()" expand="block"
+        >Guardar</ion-button
+      >
+      <ion-button *ngIf="(placeId)" (click)="showBookings()" expand="block"
+        >Ver Reservas</ion-button
+      >
+    </form>
+  </section>
+</ion-content>

@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Registro de usuario</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <section>
+    <form [formGroup]="formRegister">
+      <ion-item>
+        <ion-label position="floating">Ingrese su correo electrónico</ion-label>
+        <ion-input required formControlName="email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Ingrese su contraseña</ion-label>
+        <ion-input required formControlName="password"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Ingrese su nombre completo</ion-label>
+        <ion-input required formControlName="name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Ingrese su teléfono</ion-label>
+        <ion-input required formControlName="phone"></ion-input>
+      </ion-item>
+      <ion-button (click)="register()" expand="block">Unirse</ion-button>
+    </form>
+  </section>
+
+  <section>
+    <header>¿Ya tienes cuenta?</header>
+    <ion-button [routerLink]="['/login']" expand="block"
+      >Iniciar sesión</ion-button
+    >
+  </section>
+</ion-content>

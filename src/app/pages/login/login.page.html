@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Inicio de sesión</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <section>
+    <form [formGroup]="formLogin">
+      <ion-item>
+        <ion-label position="floating">Ingrese su correo electrónico</ion-label>
+        <ion-input required formControlName="email"></ion-input>
+      </ion-item>
+      <!-- <div
+      class="error"
+      *ngIf="formLogin.controls.email.invalid && (formLogin.controls.email.dirty )"
+    >
+      <div *ngIf="formLogin.controls.email.errors?.['required']">
+        El email es requerido
+      </div>
+    </div> -->
+      <ion-item>
+        <ion-label position="floating">Ingrese su contraseña</ion-label>
+        <ion-input required formControlName="password" type="password"></ion-input>
+      </ion-item>
+      <!-- <div
+      class="error"
+      *ngIf="formLogin.controls.password.invalid && (formLogin.controls.password.dirty )"
+    >
+      <div *ngIf="formLogin.controls.password.errors?.['required']">
+        La contraseña es requerida
+      </div>
+    </div> -->
+      <ion-button (click)="login()" expand="block">Entrar</ion-button>
+    </form>
+  </section>
+
+  <section>
+    <header>¿No tienes cuenta?</header>
+    <ion-button [routerLink]="['/register']" expand="block"
+      >Registrarse</ion-button
+    >
+  </section>
+</ion-content>

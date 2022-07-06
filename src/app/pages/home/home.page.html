@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      ArrendatarioApp
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+    <ion-list style="height: 85%; overflow:scroll">
+      <ion-list-header> <h1>Listado de mis lugares</h1> </ion-list-header>
+      <ion-item
+      *ngFor="let item of listPlaces"
+      (click)="showDetail(item.id)"
+      >
+      <ion-avatar slot="start">
+        <img [src]="calculateURL(item.fotos)" />
+      </ion-avatar>
+      <ion-label>
+        <h2>{{item.nombre}}</h2>
+        <h3>{{item.ciudad}}</h3>
+      </ion-label>
+      <span>{{item.precioNoche}}</span>
+      </ion-item>
+    </ion-list>
+
+ <!-- fab placed to the (vertical) center and end -->
+ <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab-button (click)="navigate2PlaceForm()" >
+    <ion-icon name="add"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+</ion-content>

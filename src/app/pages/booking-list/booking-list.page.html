@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Reservas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list style="overflow:scroll">
+    <ion-list-header> <h1>Listado de mis lugares con Reservas</h1> </ion-list-header>
+    <ion-item
+    *ngFor="let item of listBookings"
+    >
+    <ion-avatar slot="start">
+      <img [src]="calculateURL(item.lugar.fotos)" />
+    </ion-avatar>
+    <ion-label>
+      <h2> {{calculateNights(item.fechaInicio , item.fechaFin)}} noches</h2>
+      <h3>Desde el {{item.fechaInicio}}</h3>
+      <h3>Hasta el {{item.fechaFin}}</h3>
+      <h1> Cliente: {{item.cliente.nombrecompleto}}</h1>
+    </ion-label>
+    <span>{{item.precioTotal}}</span>
+    </ion-item>
+  </ion-list>
+</ion-content>
