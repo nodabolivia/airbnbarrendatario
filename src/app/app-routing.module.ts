@@ -43,6 +43,10 @@ const routes: Routes = [
     loadChildren: () =>
       import('./pages/maps/maps.module').then((m) => m.MapsPageModule),
   },
+  {
+    path: 'images/:id',
+    loadChildren: () => import('./pages/images/images.module').then( m => m.ImagesPageModule)
+  },
 ];
 
 @NgModule({

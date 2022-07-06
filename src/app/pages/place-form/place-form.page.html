@@ -62,14 +62,7 @@
         <ion-label position="floating">Ingrese ciudad </ion-label>
         <ion-input required formControlName="ciudad"></ion-input>
       </ion-item>
-      <ion-item>
-        <ion-label position="floating">Ingrese photo </ion-label>
-        <ion-input></ion-input>
-      </ion-item>
-      <!--<ion-item>
-        <ion-label position="floating">Ingrese longitud </ion-label>
-        <ion-input required formControlName="longitud"></ion-input>
-      </ion-item> -->
+     
       <ion-item
         style="cursor: pointer; margin-top: 20px"
         (click)="onpickupClick()"
@@ -82,6 +75,9 @@
       <ion-button *ngIf="(!placeId)" (click)="createPlace()" expand="block"
         >Guardar</ion-button
       >
+      <!-- <ion-button *ngIf="(!placeId)" (click)="navigate2Images()" expand="block"
+      >imagenes</ion-button
+    > -->
       <ion-button *ngIf="(placeId)" (click)="showBookings()" expand="block"
         >Ver Reservas</ion-button
       >

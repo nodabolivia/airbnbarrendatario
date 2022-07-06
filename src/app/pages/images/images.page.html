@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Seleccionar imagenes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-button color="primary"  (click)="submitForm()" >
+         <ion-icon name="attach"></ion-icon> Guardar
+    </ion-button>
+    <input #inputFile id="input-file"   type="file" (change)="onFileChange($event)" accept="image/png, image/jpeg"
+    multiple/>
+</ion-item>
+</ion-content>

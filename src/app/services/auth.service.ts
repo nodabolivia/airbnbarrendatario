@@ -16,14 +16,14 @@ export class AuthService {
   constructor(private http: HttpClient) { }
 
  postLogin(email: string, password: string): Observable<any>{
-  // const obj = {
-  //   email,
-  //   password
-  // };
   const obj = {
-    email:'test5@tesdn.com',
-    password:'12345'
+    email,
+    password
   };
+  // const obj = {
+  //   email:'test5@tesdn.com',
+  //   password:'12345'
+  // };
   const headers = {
     'content-type': 'application/json'
   };
